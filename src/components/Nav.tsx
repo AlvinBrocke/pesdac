@@ -1,9 +1,16 @@
 'use client';
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
-const NAV_LINKS = ["About", "Sermons", "Ministries", "Events", "Visit"] as const;
+const NAV_LINKS = [
+  { label: "About",       href: "/about" },
+  { label: "Sermons",     href: "/#sermons" },
+  { label: "Ministries",  href: "/#ministries" },
+  { label: "Events",      href: "/#events" },
+  { label: "Visit",       href: "/#visit" },
+] as const;
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
@@ -11,7 +18,7 @@ export default function Nav() {
   return (
     <>
       <nav>
-        <div className="nav-logo">
+        <Link href="/" className="nav-logo">
           <div className="logo-mark">
             <Image
               src="/pesdac-logo.png"
@@ -26,18 +33,20 @@ export default function Nav() {
             <br />
             SDA Church (PESDAC)
           </span>
-        </div>
+        </Link>
 
         <ul className="nav-links">
-          {NAV_LINKS.map((label) => (
+          {NAV_LINKS.map(({ label, href }) => (
             <li key={label}>
-              <a href={`#${label.toLowerCase()}`}>{label}</a>
+              <Link href={href}>{label}</Link>
             </li>
           ))}
         </ul>
 
         <div className="nav-end">
-          <button className="btn-gold nav-plan-btn">Plan a Visit</button>
+          <Link href="/about#visit" className="btn-gold nav-plan-btn">
+            Plan a Visit
+          </Link>
           <button
             className="nav-hamburger"
             onClick={() => setOpen((o) => !o)}
@@ -52,20 +61,21 @@ export default function Nav() {
       {open && (
         <dialog open className="mobile-menu" aria-label="Navigation menu">
           <ul className="mobile-menu-links">
-            {NAV_LINKS.map((label) => (
+            {NAV_LINKS.map(({ label, href }) => (
               <li key={label}>
-                <a
-                  href={`#${label.toLowerCase()}`}
-                  onClick={() => setOpen(false)}
-                >
+                <Link href={href} onClick={() => setOpen(false)}>
                   {label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
-          <button className="btn-gold mobile-plan-btn" onClick={() => setOpen(false)}>
+          <Link
+            href="/about#visit"
+            className="btn-gold mobile-plan-btn"
+            onClick={() => setOpen(false)}
+          >
             Plan a Visit
-          </button>
+          </Link>
         </dialog>
       )}
     </>

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, DM_Sans } from "next/font/google";
+import Nav from "@/components/Nav";
+import SiteFooter from "@/components/SiteFooter";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -32,7 +34,11 @@ export default function RootLayout({
           href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <Nav />
+        {children}
+        <SiteFooter />
+      </body>
     </html>
   );
 }

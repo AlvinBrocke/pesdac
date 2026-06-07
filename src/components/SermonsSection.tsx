@@ -1,6 +1,7 @@
 import Image from "next/image";
 import SectionHeader from "@/components/ui/SectionHeader";
 import SermonRow from "@/components/ui/SermonRow";
+import AnimateIn from "@/components/ui/AnimateIn";
 
 const YOUTUBE_BASE = "https://www.youtube.com/watch?v=";
 const YOUTUBE_CHANNEL = "https://www.youtube.com/channel/UCiY1R5aOKZDTd1Xnwt5eQng/videos";
@@ -42,7 +43,7 @@ export default function SermonsSection() {
   return (
     <section className="section" style={{ background: "white" }}>
       <SectionHeader label="This Week's Message" title="Watch. Reflect. Be moved." />
-      <div className="sermon-grid">
+      <AnimateIn className="sermon-grid">
         <a
           className="video-thumb"
           href={`${YOUTUBE_BASE}${latest.videoId}`}
@@ -95,7 +96,7 @@ export default function SermonsSection() {
             All Sermons on YouTube <i className="ti ti-arrow-right" />
           </a>
         </div>
-      </div>
+      </AnimateIn>
     </section>
   );
 }

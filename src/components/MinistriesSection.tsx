@@ -1,5 +1,6 @@
 import SectionHeader from "@/components/ui/SectionHeader";
 import MinistryCard from "@/components/ui/MinistryCard";
+import AnimateIn from "@/components/ui/AnimateIn";
 
 const MINISTRIES = [
   {
@@ -44,11 +45,11 @@ export default function MinistriesSection() {
   return (
     <section className="section ministries">
       <SectionHeader label="Get Involved" title="Ministries for every season of life" />
-      <div className="prog-grid">
+      <AnimateIn className="prog-grid" stagger>
         {MINISTRIES.map((ministry) => (
           <MinistryCard key={ministry.title} {...ministry} />
         ))}
-      </div>
+      </AnimateIn>
     </section>
   );
 }

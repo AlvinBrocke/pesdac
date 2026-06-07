@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useEffect, useRef, useState } from 'react';
-import { HeroBackgroundContent } from '@/remotion/HeroBackground';
+import { useEffect, useRef, useState } from "react";
+import { HeroBackgroundContent } from "@/remotion/HeroBackground";
 
 const FPS = 30;
 const TOTAL_FRAMES = 240; // 8-second loop
@@ -27,7 +27,12 @@ export default function HeroPlayerWrapper() {
   return (
     <div
       aria-hidden="true"
-      style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 0 }}
+      style={{
+        position: "absolute",
+        inset: 0,
+        pointerEvents: "none",
+        zIndex: 0,
+      }}
     >
       <HeroBackgroundContent frame={frame} totalFrames={TOTAL_FRAMES} />
     </div>

@@ -1,4 +1,5 @@
 import StatBox from "@/components/ui/StatBox";
+import AnimateIn from "@/components/ui/AnimateIn";
 
 const STATS = [
   { value: "60+", label: "Years of worship" },
@@ -10,7 +11,7 @@ const STATS = [
 export default function AboutSection() {
   return (
     <section className="about-strip">
-      <div>
+      <AnimateIn delay={0.05}>
         <div className="section-label">Who We Are</div>
         <h2 className="section-title">
           Faith rooted in
@@ -27,12 +28,12 @@ export default function AboutSection() {
         <button className="btn-outline">
           Our Story <i className="ti ti-arrow-right" />
         </button>
-      </div>
-      <div className="stats-grid">
+      </AnimateIn>
+      <AnimateIn className="stats-grid" stagger>
         {STATS.map((stat) => (
           <StatBox key={stat.label} {...stat} />
         ))}
-      </div>
+      </AnimateIn>
     </section>
   );
 }
