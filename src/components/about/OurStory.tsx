@@ -1,3 +1,5 @@
+import ScrollParallax from "@/components/ui/ScrollParallax";
+
 export default function OurStory() {
   return (
     <section className="our-story">
@@ -30,11 +32,11 @@ export default function OurStory() {
           </p>
         </div>
 
-        <div className="our-story-aside">
+        <ScrollParallax mode="drift" speed={0.06} className="our-story-aside">
           <figure className="story-quote">
             <blockquote>
-              "We are a people shaped by the Word of God and the hope of
-              Christ's return — and we invite you to be part of that story."
+              &ldquo;We are a people shaped by the Word of God and the hope of
+              Christ&apos;s return — and we invite you to be part of that story.&rdquo;
             </blockquote>
             <figcaption>
               <div className="story-pastor-avatar">SN</div>
@@ -67,7 +69,7 @@ export default function OurStory() {
               <dd>Ongoing renovation &amp; expansion to serve a growing family</dd>
             </div>
           </dl>
-        </div>
+        </ScrollParallax>
       </div>
     </section>
   );

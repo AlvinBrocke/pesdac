@@ -1,10 +1,13 @@
 import Link from "next/link";
 import HeroPlayerWrapper from "@/components/HeroPlayerWrapper";
+import ScrollParallax from "@/components/ui/ScrollParallax";
 
 export default function AboutCta() {
   return (
     <section className="about-cta" id="visit">
-      <HeroPlayerWrapper />
+      <ScrollParallax mode="bg" speed={0.28}>
+        <HeroPlayerWrapper />
+      </ScrollParallax>
 
       <div className="about-cta-inner">
         <div className="about-cta-label">Join Our Family</div>
