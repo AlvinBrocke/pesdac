@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, DM_Sans } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import Nav from "@/components/Nav";
 import SiteFooter from "@/components/SiteFooter";
 import ChatWidget from "@/components/ChatWidget";
@@ -40,6 +41,7 @@ export default function RootLayout({
         {children}
         <SiteFooter />
         <ChatWidget />
+        <Analytics />
       </body>
     </html>
   );
