@@ -1,5 +1,6 @@
 import ServiceItem from '@/components/ui/ServiceItem';
 import HeroPlayerWrapper from '@/components/HeroPlayerWrapper';
+import ScrollParallax from '@/components/ui/ScrollParallax';
 
 const SERVICE_TIMES = [
   { label: 'Calvary Hour',   value: '8:00 AM',         sub: 'Every Saturday' },
@@ -11,7 +12,9 @@ const SERVICE_TIMES = [
 export default function HeroSection() {
   return (
     <section className="hero">
-      <HeroPlayerWrapper />
+      <ScrollParallax mode="bg" speed={0.28}>
+        <HeroPlayerWrapper />
+      </ScrollParallax>
       <div className="hero-content">
         <div className="hero-tag">Osu · Accra · Ghana</div>
         <h1>

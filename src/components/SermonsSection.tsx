@@ -1,44 +1,44 @@
 import Image from "next/image";
 import SectionHeader from "@/components/ui/SectionHeader";
-import SermonRow from "@/components/ui/SermonRow";
 import AnimateIn from "@/components/ui/AnimateIn";
+import { getLatestVideos, type YouTubeVideo } from "@/lib/youtube";
 
 const YOUTUBE_BASE = "https://www.youtube.com/watch?v=";
-const YOUTUBE_CHANNEL = "https://www.youtube.com/channel/UCiY1R5aOKZDTd1Xnwt5eQng/videos";
+const YOUTUBE_CHANNEL =
+  "https://www.youtube.com/channel/UCiY1R5aOKZDTd1Xnwt5eQng/videos";
 
-const SERMONS = [
+const FALLBACK_SERMONS: YouTubeVideo[] = [
   {
-    num: "01",
+    videoId: "UEVCUQjfdIM",
     title: "Touch Me and See",
     date: "Jun 6, 2026",
-    videoId: "UEVCUQjfdIM",
     thumbnail: "/thumb-UEVCUQjfdIM.jpg",
   },
   {
-    num: "02",
+    videoId: "B7rQt9O0UgQ",
     title: "Sabbath Worship Service",
     date: "May 30, 2026",
-    videoId: "B7rQt9O0UgQ",
     thumbnail: "/thumb-B7rQt9O0UgQ.jpg",
   },
   {
-    num: "03",
+    videoId: "FZNaChXG_7w",
     title: "Enoch Walked with God",
     date: "May 16, 2026",
-    videoId: "FZNaChXG_7w",
     thumbnail: "/thumb-FZNaChXG_7w.jpg",
   },
   {
-    num: "04",
+    videoId: "AiJ9TQIHZNk",
     title: "Book Launch: Anchored in a Faithful Friend",
     date: "May 3, 2026",
-    videoId: "AiJ9TQIHZNk",
     thumbnail: "/thumb-AiJ9TQIHZNk.jpg",
   },
-] as const;
+];
 
-export default function SermonsSection() {
-  const latest = SERMONS[0];
+export default async function SermonsSection() {
+  const fetched = await getLatestVideos(4);
+  const videos = fetched.length ? fetched : FALLBACK_SERMONS;
+
+  const latest = videos[0];
 
   return (
     <section className="section" style={{ background: "white" }}>
@@ -69,19 +69,19 @@ export default function SermonsSection() {
 
         <div>
           <div className="sermon-list">
-            {SERMONS.map((sermon) => (
+            {videos.map((video, i) => (
               <a
-                key={sermon.num}
+                key={video.videoId}
                 className="sermon-row"
-                href={`${YOUTUBE_BASE}${sermon.videoId}`}
+                href={`${YOUTUBE_BASE}${video.videoId}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ textDecoration: "none" }}
               >
-                <span className="sermon-num">{sermon.num}</span>
+                <span className="sermon-num">{String(i + 1).padStart(2, "0")}</span>
                 <div className="sermon-info">
-                  <h4>{sermon.title}</h4>
-                  <span>{sermon.date}</span>
+                  <h4>{video.title}</h4>
+                  <span>{video.date}</span>
                 </div>
                 <i className="ti ti-player-play" />
               </a>

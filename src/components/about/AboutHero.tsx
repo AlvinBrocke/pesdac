@@ -1,9 +1,12 @@
 import HeroPlayerWrapper from "@/components/HeroPlayerWrapper";
+import ScrollParallax from "@/components/ui/ScrollParallax";
 
 export default function AboutHero() {
   return (
     <section className="about-hero">
-      <HeroPlayerWrapper />
+      <ScrollParallax mode="bg" speed={0.28}>
+        <HeroPlayerWrapper />
+      </ScrollParallax>
       <div className="about-hero-inner">
         <div className="about-hero-tag">Who We Are</div>
         <h1 className="about-hero-title">
