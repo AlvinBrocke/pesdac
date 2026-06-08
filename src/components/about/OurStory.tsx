@@ -35,8 +35,8 @@ export default function OurStory() {
         <ScrollParallax mode="drift" speed={0.06} className="our-story-aside">
           <figure className="story-quote">
             <blockquote>
-              "We are a people shaped by the Word of God and the hope of
-              Christ's return — and we invite you to be part of that story."
+              &ldquo;We are a people shaped by the Word of God and the hope of
+              Christ&apos;s return — and we invite you to be part of that story.&rdquo;
             </blockquote>
             <figcaption>
               <div className="story-pastor-avatar">SN</div>
