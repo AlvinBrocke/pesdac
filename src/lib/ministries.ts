@@ -165,6 +165,78 @@ export const MINISTRIES: Ministry[] = [
     ],
     color: "#6B2737",
   },
+  {
+    slug: "adventist-community-services",
+    icon: "ti-heart-handshake",
+    title: "Adventist Community Services",
+    description:
+      "Serving our neighbours through food, clothing, and social welfare programmes that reflect the love of Christ.",
+    longDescription:
+      "Details coming soon — our communications team is preparing a full write-up of the incredible work ACS does in the Osu community and beyond. Check back shortly.\n\nAdventist Community Services (ACS) is the social welfare arm of the church, reaching out to those in need with practical acts of compassion that demonstrate the gospel in action. From food distribution to clothing drives, ACS lives out Matthew 25.",
+    leader: "TBC",
+    leaderRole: "ACS Director",
+    meetingTime: "TBC — contact the church office for details",
+    meetingLocation: "Community Hall",
+    scriptureRef: "Matthew 25:35",
+    scriptureText:
+      "For I was hungry and you gave me food, I was thirsty and you gave me drink, I was a stranger and you welcomed me.",
+    activities: [
+      "Food and grocery distribution",
+      "Clothing and household goods drives",
+      "Social welfare and community support",
+      "Disaster relief response",
+      "Partnership with local welfare organisations",
+    ],
+    color: "#4A6741",
+  },
+  {
+    slug: "adventist-mens-ministry",
+    icon: "ti-shield-check",
+    title: "Adventist Men's Ministry",
+    description:
+      "Equipping men to lead with faith, integrity, and purpose — in the home, the church, and the community.",
+    longDescription:
+      "Details coming soon — our communications team is working with AMM leadership to prepare a full profile of this ministry. Check back shortly.\n\nThe Adventist Men's Ministry (AMM) exists to strengthen men in their walk with God and their roles as husbands, fathers, and community leaders. Through fellowship, discipleship, and shared service, AMM builds bonds that last a lifetime.",
+    leader: "TBC",
+    leaderRole: "AMM Leader",
+    meetingTime: "TBC — contact the church office for details",
+    meetingLocation: "Fellowship Hall",
+    scriptureRef: "Joshua 24:15",
+    scriptureText:
+      "But as for me and my household, we will serve the Lord.",
+    activities: [
+      "Men's fellowship and accountability groups",
+      "Discipleship and Bible study for men",
+      "Leadership development workshops",
+      "Father–child bonding programmes",
+      "Community service and outreach projects",
+    ],
+    color: "#2D4A6E",
+  },
+  {
+    slug: "personal-ministries",
+    icon: "ti-bible",
+    title: "Personal Ministries",
+    description:
+      "Equipping every member to share their faith and reach the surrounding community for Christ.",
+    longDescription:
+      "Details coming soon — our communications team is preparing a full write-up of Personal Ministries' outreach initiatives. Check back shortly.\n\nPersonal Ministries is the evangelism and outreach engine of PESDAC. It trains and equips every member — not just leaders — to confidently share their faith through Bible studies, community engagement, and personal witness.",
+    leader: "TBC",
+    leaderRole: "Personal Ministries Leader",
+    meetingTime: "TBC — contact the church office for details",
+    meetingLocation: "Main Sanctuary",
+    scriptureRef: "Mark 16:15",
+    scriptureText:
+      "Go into all the world and preach the gospel to every creature.",
+    activities: [
+      "Evangelism training for church members",
+      "Community Bible study outreach",
+      "Friendship and interest evangelism",
+      "Literature distribution and media ministry",
+      "Follow-up care for new and returning members",
+    ],
+    color: "#5A3D6B",
+  },
 ];
 
 export function getMinistryBySlug(slug: string): Ministry | undefined {

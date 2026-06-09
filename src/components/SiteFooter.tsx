@@ -3,9 +3,11 @@ import NewsletterSignup from "@/components/NewsletterSignup";
 
 const QUICK_LINKS = [
   { label: "About", href: "/about" },
+  { label: "Our Heritage", href: "/pioneers" },
   { label: "Sermons", href: "/sermons" },
   { label: "Ministries", href: "/ministries" },
   { label: "Events", href: "/events" },
+  { label: "Gallery", href: "/gallery" },
   { label: "Give", href: "/give" },
   { label: "Contact", href: "/contact" },
 ] as const;
@@ -48,7 +50,7 @@ export default function SiteFooter() {
           </div>
           <p>
             An English-speaking Seventh-day Adventist congregation in the heart
-            of Osu, Accra — worshipping together since 1964.
+            of Osu, Accra — worshipping together since 1992.
           </p>
           <div className="social-links">
             {SOCIAL_LINKS.map(({ href, icon, label }) => (

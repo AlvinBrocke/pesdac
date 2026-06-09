@@ -9,11 +9,11 @@ import AboutCta from "@/components/about/AboutCta";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Discover PESDAC's 60-year story in Osu, Accra — our mission, core beliefs, and the pastoral team serving Prince Emmanuel Seventh-day Adventist Church.",
+    "Discover PESDAC's 34-year story in Osu, Accra — our mission, core beliefs, and the pastoral team serving Prince Emmanuel Seventh-day Adventist Church.",
   openGraph: {
     title: "About – PESDAC | Prince Emmanuel SDA Church",
     description:
-      "Discover our 60-year story, mission, beliefs, and leadership. Prince Emmanuel SDA Church has been a place of worship and community in Osu, Accra since 1964.",
+      "Discover our 34-year story, mission, beliefs, and leadership. Prince Emmanuel SDA Church has been a place of worship and community in Osu, Accra since 1992.",
     images: [
       {
         url: "/church-visit.jpg",

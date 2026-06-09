@@ -8,7 +8,7 @@ const schema = {
   url: SITE_URL,
   image: `${SITE_URL}/church-visit.jpg`,
   description:
-    "An English-speaking Seventh-day Adventist congregation in the heart of Ringway Estates, Osu, Accra, Ghana. Worshipping together since 1964.",
+    "An English-speaking Seventh-day Adventist congregation in the heart of Ringway Estates, Osu, Accra, Ghana. Worshipping together since 1992.",
   address: {
     "@type": "PostalAddress",
     streetAddress: "23 Osu Avenue, Ringway Estates",
@@ -23,7 +23,7 @@ const schema = {
   },
   telephone: "+233302223720",
   email: "info@pesdacgh.org",
-  foundingDate: "1964",
+  foundingDate: "1992",
   sameAs: [
     "https://www.instagram.com/pesdac1/",
     "https://www.youtube.com/channel/UCiY1R5aOKZDTd1Xnwt5eQng",

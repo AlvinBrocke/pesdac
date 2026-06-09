@@ -1,3 +1,4 @@
+import Image from "next/image";
 import ScrollParallax from "@/components/ui/ScrollParallax";
 
 export default function OurStory() {
@@ -12,13 +13,13 @@ export default function OurStory() {
             <em>grown by grace</em>
           </h2>
           <p>
-            Prince Emmanuel Seventh-day Adventist Church was established in 1964
+            Prince Emmanuel Seventh-day Adventist Church was established in 1992
             in the Ringway Estates neighbourhood of Osu, Accra. What began as a
             small gathering of believers has grown into a vibrant congregation
             that touches hundreds of lives every week.
           </p>
           <p>
-            Over six decades our church has weathered change, embraced growth,
+            Over three decades our church has weathered change, embraced growth,
             and deepened its commitment to Scripture, community, and service.
             Under the leadership of visionary pastors and dedicated lay leaders,
             we have expanded our ministries, renovated our facilities, and
@@ -33,6 +34,15 @@ export default function OurStory() {
         </div>
 
         <ScrollParallax mode="drift" speed={0.06} className="our-story-aside">
+          <figure className="story-photo">
+            <Image
+              src="/church-visit.jpg"
+              alt="Prince Emmanuel SDA Church — Ringway Estates, Osu, Accra"
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="story-photo-img"
+            />
+          </figure>
           <figure className="story-quote">
             <blockquote>
               &ldquo;We are a people shaped by the Word of God and the hope of
@@ -49,11 +59,11 @@ export default function OurStory() {
 
           <dl className="story-timeline">
             <div className="timeline-item">
-              <dt>1964</dt>
+              <dt>1992</dt>
               <dd>Church founded in Ringway Estates, Osu</dd>
             </div>
             <div className="timeline-item">
-              <dt>1980s</dt>
+              <dt>Late 1990s</dt>
               <dd>First major building expansion &amp; youth ministry launch</dd>
             </div>
             <div className="timeline-item">

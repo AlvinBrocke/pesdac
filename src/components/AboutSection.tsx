@@ -3,7 +3,7 @@ import StatBox from "@/components/ui/StatBox";
 import AnimateIn from "@/components/ui/AnimateIn";
 
 const STATS = [
-  { value: "60+", label: "Years of worship" },
+  { value: "34+", label: "Years of worship" },
   { value: "8+",  label: "Active ministries" },
   { value: "Sat", label: "Sabbath services" },
   { value: "Osu", label: "Ringway Estates" },
@@ -17,12 +17,12 @@ export default function AboutSection() {
         <h2 className="section-title">
           Faith rooted in
           <br />
-          community since 1964
+          community since 1992
         </h2>
         <p>
           Prince Emmanuel Seventh-day Adventist Church has been a place of
           worship, fellowship, and service in the heart of Osu, Accra for over
-          six decades. We are a warm, English-speaking congregation welcoming
+          three decades. We are a warm, English-speaking congregation welcoming
           everyone — whether you grew up Adventist or are simply curious about
           faith.
         </p>

@@ -13,6 +13,15 @@ export default function MinistriesGrid() {
               href={`/ministries/${ministry.slug}`}
               className="prog-card prog-card--linked"
             >
+              <div
+                className="prog-card-img"
+                aria-hidden="true"
+                style={{
+                  background: `linear-gradient(145deg, ${ministry.color} 0%, #1a0a00 100%)`,
+                }}
+              >
+                <i className={`ti ${ministry.icon}`} />
+              </div>
               <div className="prog-icon">
                 <i className={`ti ${ministry.icon}`} aria-hidden="true" />
               </div>

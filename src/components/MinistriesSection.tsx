@@ -15,6 +15,7 @@ export default function MinistriesSection() {
             icon={ministry.icon}
             title={ministry.title}
             description={ministry.description}
+            color={ministry.color}
             href={`/ministries/${ministry.slug}`}
           />
         ))}
