@@ -1,10 +1,12 @@
 import Image from "next/image";
+import NewsletterSignup from "@/components/NewsletterSignup";
 
 const QUICK_LINKS = [
   { label: "About", href: "/about" },
-  { label: "Sermons", href: "/#sermons" },
-  { label: "Ministries", href: "/#ministries" },
-  { label: "Events", href: "/#events" },
+  { label: "Sermons", href: "/sermons" },
+  { label: "Ministries", href: "/ministries" },
+  { label: "Events", href: "/events" },
+  { label: "Give", href: "/give" },
   { label: "Contact", href: "/contact" },
 ] as const;
 
@@ -97,18 +99,16 @@ export default function SiteFooter() {
           </div>
         </div>
 
-        {/* Watch Online */}
+        {/* Stay Connected */}
         <div>
-          <h3 className="footer-col-title">Watch Online</h3>
-          <ul className="footer-links">
+          <h3 className="footer-col-title">Stay Connected</h3>
+          <p className="footer-newsletter-blurb">
+            Get updates on services, events, and church news delivered to your inbox.
+          </p>
+          <NewsletterSignup />
+          <ul className="footer-links footer-watch-links">
             <li>
-              <a
-                href="https://www.youtube.com/channel/UCiY1R5aOKZDTd1Xnwt5eQng/videos"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Latest Sermons
-              </a>
+              <a href="/sermons">Sermon Archive</a>
             </li>
             <li>
               <a
@@ -117,24 +117,6 @@ export default function SiteFooter() {
                 rel="noopener noreferrer"
               >
                 Live Stream
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.instagram.com/pesdac1/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Instagram
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.facebook.com/pesdac1/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Facebook
               </a>
             </li>
           </ul>

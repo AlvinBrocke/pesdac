@@ -2344,3 +2344,950 @@ footer {
   .contact-body { padding: 2.5rem 1rem; }
   .contact-form-card { padding: 1.5rem; }
 }
+
+/* ══════════════════════════════════════════════
+   EVENTS PAGE
+   ══════════════════════════════════════════════ */
+
+/* ── Upcoming Events section ── */
+.events-section {
+  background: #faf7f0;
+  padding: 5rem 3rem;
+}
+.events-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ── Category badges ── */
+.events-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+}
+.events-badge--worship    { background: rgba(201,152,10,0.15); color: #7a5c00; }
+.events-badge--fellowship { background: rgba(61,12,26,0.1);   color: #5a1228; }
+.events-badge--outreach   { background: rgba(34,120,60,0.12);  color: #1a5c30; }
+.events-badge--youth      { background: rgba(30,90,180,0.1);   color: #1a3a80; }
+.events-badge--prayer     { background: rgba(100,30,100,0.1);  color: #5a1a5a; }
+
+/* ── Featured card ── */
+.events-card--featured {
+  background: #1a0a00;
+  border-radius: 16px;
+  padding: 2.25rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.events-card--featured .events-badge--worship { background: rgba(201,152,10,0.2); color: #c9980a; }
+.events-card--featured .events-card-date  { color: rgba(245,230,200,0.85); }
+.events-card--featured .events-card-title { color: #f5e6c8; font-size: 30px; }
+.events-card--featured .events-card-desc  { color: rgba(245,230,200,0.9); }
+.events-card--featured .events-card-meta  { color: rgba(245,230,200,0.8); border-color: rgba(245,230,200,0.15); }
+.events-card--featured .events-card-meta i { color: #c9980a; }
+.events-card--featured .events-cal-btn {
+  background: rgba(201,152,10,0.25);
+  border-color: rgba(201,152,10,0.55);
+  color: #e8b50f;
+  align-self: flex-start;
+  margin-top: 1.5rem;
+  font-weight: 600;
+}
+.events-card--featured .events-cal-btn:hover { background: rgba(201,152,10,0.4); border-color: #c9980a; }
+
+/* ── Regular cards grid ── */
+.events-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+.events-card {
+  background: white;
+  border: 1px solid rgba(61,12,26,0.08);
+  border-radius: 14px;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+.events-card:hover {
+  border-color: rgba(201,152,10,0.35);
+  box-shadow: 0 8px 28px rgba(61,12,26,0.08);
+  transform: translateY(-3px);
+}
+.events-card-body { flex: 1; }
+.events-card-date {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: #c9980a;
+  margin-bottom: 6px;
+}
+.events-card-title {
+  font-family: var(--font-cormorant, "Cormorant Garamond"), serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: #1a0a00;
+  line-height: 1.25;
+  margin-bottom: 0.65rem;
+}
+.events-card-desc {
+  font-size: 13px;
+  color: #5f5f5f;
+  line-height: 1.65;
+  margin-bottom: 1rem;
+}
+.events-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 12px;
+  color: #767676;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(26,26,26,0.06);
+  margin-bottom: 1.25rem;
+}
+.events-card-meta span { display: flex; align-items: center; gap: 5px; }
+.events-card-meta i { font-size: 14px; color: #c9980a; }
+.events-cal-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 8px 14px;
+  border: 1px solid rgba(26,26,26,0.12);
+  border-radius: 6px;
+  color: #3d0c1a;
+  background: transparent;
+  transition: background 0.2s, border-color 0.2s;
+  align-self: flex-start;
+}
+.events-cal-btn:hover {
+  background: rgba(61,12,26,0.05);
+  border-color: rgba(61,12,26,0.2);
+}
+.events-cal-btn i { font-size: 15px; }
+
+/* ── Weekly Schedule section ── */
+.weekly-section {
+  background: #1a0a00;
+  padding: 5rem 3rem;
+}
+.weekly-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.weekly-inner .section-label { color: #c9980a; }
+.weekly-inner .section-title { color: #f5e6c8; }
+.weekly-note {
+  font-size: 14px;
+  color: rgba(245,230,200,0.65);
+  line-height: 1.7;
+  max-width: 560px;
+  margin-bottom: 2.5rem;
+}
+.weekly-note strong { color: rgba(245,230,200,0.9); font-weight: 500; }
+.weekly-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+.weekly-item {
+  display: flex;
+  gap: 1.25rem;
+  background: rgba(245,230,200,0.04);
+  border: 1px solid rgba(245,230,200,0.08);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: border-color 0.2s, background 0.2s;
+}
+.weekly-item:hover {
+  border-color: rgba(201,152,10,0.25);
+  background: rgba(201,152,10,0.04);
+}
+.weekly-icon {
+  width: 44px;
+  height: 44px;
+  background: rgba(201,152,10,0.12);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.weekly-icon i { font-size: 22px; color: #c9980a; }
+.weekly-body { flex: 1; }
+.weekly-time {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: #c9980a;
+  margin-bottom: 4px;
+}
+.weekly-name {
+  font-family: var(--font-cormorant, "Cormorant Garamond"), serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #f5e6c8;
+  margin-bottom: 6px;
+  line-height: 1.25;
+}
+.weekly-desc {
+  font-size: 13px;
+  color: rgba(245,230,200,0.6);
+  line-height: 1.65;
+}
+
+/* ── Events responsive ── */
+@media (max-width: 1024px) {
+  .events-section, .weekly-section { padding: 4rem 2rem; }
+}
+@media (max-width: 768px) {
+  .events-section, .weekly-section { padding: 3rem 1.5rem; }
+  .events-grid, .weekly-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .events-section, .weekly-section { padding: 2.5rem 1rem; }
+}
+
+/* ══════════════════════════════════════════════
+   SERMONS PAGE
+   ══════════════════════════════════════════════ */
+
+/* ── Featured Sermon ── */
+.featured-sermon {
+  background: #1a0a00;
+  padding: 5rem 3rem;
+}
+.featured-sermon-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+.featured-sermon-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #c9980a;
+  margin-bottom: 0.85rem;
+  grid-column: 1 / -1;
+}
+.featured-sermon-thumb {
+  grid-row: 2;
+}
+.featured-sermon-meta {
+  grid-row: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.featured-sermon-date {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: rgba(245,230,200,0.45);
+}
+.featured-sermon-title {
+  font-family: var(--font-cormorant, "Cormorant Garamond"), serif;
+  font-size: clamp(24px, 3vw, 38px);
+  font-weight: 600;
+  color: #f5e6c8;
+  line-height: 1.2;
+}
+.featured-sermon-desc {
+  font-size: 13px;
+  color: rgba(245,230,200,0.65);
+  line-height: 1.7;
+  margin-bottom: 0.5rem;
+}
+.featured-sermon-meta .btn-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  align-self: flex-start;
+}
+
+/* ── Sermon Archive ── */
+.sermon-archive {
+  background: #faf7f0;
+  padding: 5rem 3rem;
+}
+.sermon-archive-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.sermon-archive-header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+.sermon-archive-title {
+  font-family: var(--font-cormorant, "Cormorant Garamond"), serif;
+  font-size: 28px;
+  font-weight: 600;
+  color: #1a0a00;
+  flex: 1;
+  min-width: 140px;
+}
+.sermon-filter-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.sermon-filter-pill {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  padding: 6px 14px;
+  border: 1px solid rgba(26,26,26,0.12);
+  border-radius: 20px;
+  background: white;
+  color: #5f5f5f;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s, color 0.2s;
+}
+.sermon-filter-pill:hover {
+  border-color: rgba(61,12,26,0.25);
+  color: #3d0c1a;
+}
+.sermon-filter-pill--active {
+  background: #3d0c1a;
+  border-color: #3d0c1a;
+  color: #f5e6c8;
+}
+.sermon-archive-empty {
+  font-size: 14px;
+  color: #767676;
+  padding: 2rem 0;
+  text-align: center;
+}
+.sermon-archive-footer {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(26,26,26,0.08);
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* ── Sermons responsive ── */
+@media (max-width: 1024px) {
+  .featured-sermon { padding: 4rem 2rem; }
+  .sermon-archive  { padding: 4rem 2rem; }
+}
+@media (max-width: 768px) {
+  .featured-sermon { padding: 3rem 1.5rem; }
+  .featured-sermon-inner { grid-template-columns: 1fr; }
+  .featured-sermon-label { grid-column: 1; }
+  .featured-sermon-thumb, .featured-sermon-meta { grid-row: auto; }
+  .sermon-archive { padding: 3rem 1.5rem; }
+  .sermon-archive-header { flex-direction: column; align-items: flex-start; }
+}
+@media (max-width: 480px) {
+  .featured-sermon { padding: 2.5rem 1rem; }
+  .sermon-archive  { padding: 2.5rem 1rem; }
+}
+
+/* ══════════════════════════════════════════════
+   GIVE PAGE
+   ══════════════════════════════════════════════ */
+
+/* ── Philosophy ── */
+.give-philosophy {
+  background: #1a0a00;
+  padding: 5rem 3rem;
+}
+.give-philosophy-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.give-philosophy-inner .section-label { color: #c9980a; }
+.give-philosophy-inner .section-title { color: #f5e6c8; }
+.give-philosophy-lead {
+  font-size: 14px;
+  color: rgba(245,230,200,0.65);
+  line-height: 1.75;
+  max-width: 640px;
+  margin-bottom: 3rem;
+}
+.give-pillar-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.5rem;
+}
+.give-pillar-card {
+  background: rgba(245,230,200,0.04);
+  border: 1px solid rgba(245,230,200,0.08);
+  border-radius: 14px;
+  padding: 1.75rem;
+  transition: border-color 0.2s, background 0.2s;
+}
+.give-pillar-card:hover {
+  border-color: rgba(201,152,10,0.25);
+  background: rgba(201,152,10,0.04);
+}
+.give-pillar-icon {
+  width: 46px;
+  height: 46px;
+  background: rgba(201,152,10,0.12);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.1rem;
+}
+.give-pillar-icon i { font-size: 22px; color: #c9980a; }
+.give-pillar-title {
+  font-family: var(--font-cormorant, "Cormorant Garamond"), serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: #f5e6c8;
+  margin-bottom: 0.6rem;
+}
+.give-pillar-desc {
+  font-size: 13px;
+  color: rgba(245,230,200,0.6);
+  line-height: 1.65;
+}
+
+/* ── Tiers ── */
+.give-tiers-section {
+  background: #faf7f0;
+  padding: 5rem 3rem;
+}
+.give-tiers-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.give-tiers-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+.give-tier-card {
+  background: white;
+  border: 1px solid rgba(61,12,26,0.08);
+  border-radius: 16px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+.give-tier-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(61,12,26,0.1);
+}
+.give-tier-card--featured {
+  border-color: #c9980a;
+  background: linear-gradient(160deg, #fff 60%, rgba(201,152,10,0.04));
+}
+.give-tier-icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(61,12,26,0.06);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+.give-tier-card--featured .give-tier-icon { background: rgba(201,152,10,0.12); }
+.give-tier-icon i { font-size: 24px; color: #3d0c1a; }
+.give-tier-card--featured .give-tier-icon i { color: #c9980a; }
+.give-tier-name {
+  font-family: var(--font-cormorant, "Cormorant Garamond"), serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #1a0a00;
+}
+.give-tier-basis {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: #c9980a;
+}
+.give-tier-desc {
+  font-size: 13px;
+  color: #5f5f5f;
+  line-height: 1.65;
+  flex: 1;
+}
+.give-tier-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 0.75rem;
+  align-self: flex-start;
+  text-decoration: none;
+}
+
+/* ── FAQ ── */
+.give-faq-section {
+  background: white;
+  padding: 5rem 3rem;
+}
+.give-faq-inner {
+  max-width: 760px;
+  margin: 0 auto;
+}
+.give-faq-list {
+  margin-top: 2.5rem;
+  border-top: 1px solid rgba(26,26,26,0.08);
+}
+.give-faq-item {
+  border-bottom: 1px solid rgba(26,26,26,0.08);
+}
+.give-faq-question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--font-dm-sans, "DM Sans"), sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: #1a0a00;
+  line-height: 1.4;
+}
+.give-faq-question i { font-size: 18px; color: #c9980a; flex-shrink: 0; }
+.give-faq-item--open .give-faq-question { color: #3d0c1a; }
+.give-faq-answer {
+  font-size: 14px;
+  color: #5f5f5f;
+  line-height: 1.7;
+  padding-bottom: 1.25rem;
+}
+
+/* ── CTA strip ── */
+.give-cta {
+  background: linear-gradient(135deg, #3d0c1a 0%, #1a0a00 100%);
+  padding: 5rem 3rem;
+  text-align: center;
+}
+.give-cta-inner {
+  max-width: 680px;
+  margin: 0 auto;
+}
+.give-cta-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #c9980a;
+  margin-bottom: 0.75rem;
+}
+.give-cta-title {
+  font-family: var(--font-cormorant, "Cormorant Garamond"), serif;
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 600;
+  color: #f5e6c8;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+.give-cta-sub {
+  font-size: 14px;
+  color: rgba(245,230,200,0.65);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+.give-cta-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ── Give responsive ── */
+@media (max-width: 1024px) {
+  .give-philosophy, .give-tiers-section, .give-faq-section, .give-cta { padding: 4rem 2rem; }
+}
+@media (max-width: 768px) {
+  .give-philosophy, .give-tiers-section, .give-faq-section, .give-cta { padding: 3rem 1.5rem; }
+  .give-pillar-grid, .give-tiers-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .give-philosophy, .give-tiers-section, .give-faq-section, .give-cta { padding: 2.5rem 1rem; }
+}
+
+/* ══════════════════════════════════════════════
+   MINISTRIES PAGES
+   ══════════════════════════════════════════════ */
+
+/* ── Ministries index ── */
+.ministries-index-section {
+  background: #faf7f0;
+  padding: 5rem 3rem;
+}
+.ministries-index-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ── prog-card linked variant ── */
+.prog-card--linked {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+.prog-card-meta {
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(26,26,26,0.07);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.prog-card-leader {
+  font-size: 11px;
+  color: #767676;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.prog-card-leader i { font-size: 13px; }
+.prog-card-arrow {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: #c9980a;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: gap 0.2s;
+}
+.prog-card--linked:hover .prog-card-arrow { gap: 8px; }
+
+/* ── Ministry detail hero ── */
+.ministry-hero {
+  min-height: 480px;
+  display: flex;
+  align-items: flex-end;
+  padding: 4rem 3rem 3.5rem;
+  position: relative;
+}
+.ministry-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.25);
+  pointer-events: none;
+}
+.ministry-hero-inner {
+  max-width: 840px;
+  position: relative;
+  z-index: 1;
+}
+.ministry-hero-icon {
+  width: 56px;
+  height: 56px;
+  background: rgba(201,152,10,0.2);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+.ministry-hero-icon i { font-size: 28px; color: #c9980a; }
+.ministry-hero-tag {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(245,230,200,0.55);
+  margin-bottom: 0.5rem;
+}
+.ministry-hero-title {
+  font-family: var(--font-cormorant, "Cormorant Garamond"), serif;
+  font-size: clamp(36px, 5vw, 60px);
+  font-weight: 600;
+  color: #f5e6c8;
+  line-height: 1.15;
+  margin-bottom: 0.85rem;
+}
+.ministry-hero-sub {
+  font-size: 15px;
+  color: rgba(245,230,200,0.7);
+  line-height: 1.65;
+  max-width: 560px;
+  margin-bottom: 1.5rem;
+}
+.ministry-hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  font-size: 12px;
+  color: rgba(245,230,200,0.6);
+}
+.ministry-hero-meta span { display: flex; align-items: center; gap: 6px; }
+.ministry-hero-meta i { font-size: 15px; color: #c9980a; }
+
+/* ── Ministry detail body ── */
+.ministry-detail {
+  background: #faf7f0;
+  padding: 5rem 3rem;
+}
+.ministry-detail-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 3.5rem;
+  align-items: start;
+}
+.ministry-long-desc {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  font-size: 15px;
+  color: #3d3d3d;
+  line-height: 1.75;
+  margin-bottom: 2.5rem;
+}
+.ministry-activities { margin-bottom: 2.5rem; }
+.ministry-activities-title {
+  font-family: var(--font-cormorant, "Cormorant Garamond"), serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #1a0a00;
+  margin-bottom: 1rem;
+}
+.ministry-activities-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.ministry-activities-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  color: #3d3d3d;
+  line-height: 1.55;
+}
+.ministry-activities-list i { font-size: 16px; color: #c9980a; margin-top: 2px; flex-shrink: 0; }
+.ministry-scripture {
+  background: #1a0a00;
+  border-left: 3px solid #c9980a;
+  border-radius: 0 10px 10px 0;
+  padding: 1.5rem 1.75rem;
+  margin: 0;
+}
+.ministry-scripture-text {
+  font-family: var(--font-cormorant, "Cormorant Garamond"), serif;
+  font-size: 20px;
+  font-style: italic;
+  color: #f5e6c8;
+  line-height: 1.55;
+  margin-bottom: 0.75rem;
+}
+.ministry-scripture-ref {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: #c9980a;
+  font-style: normal;
+}
+
+/* ── Ministry sidebar cards ── */
+.ministry-sidebar { display: flex; flex-direction: column; gap: 1.25rem; }
+.ministry-leader-card {
+  background: white;
+  border: 1px solid rgba(61,12,26,0.08);
+  border-radius: 14px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.ministry-leader-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 700;
+  color: rgba(245,230,200,0.9);
+  flex-shrink: 0;
+}
+.ministry-leader-label {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #c9980a;
+  margin-bottom: 3px;
+}
+.ministry-leader-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a0a00;
+  line-height: 1.3;
+}
+.ministry-leader-role {
+  font-size: 12px;
+  color: #767676;
+}
+.ministry-info-card {
+  background: white;
+  border: 1px solid rgba(61,12,26,0.08);
+  border-radius: 14px;
+  padding: 1.5rem;
+}
+.ministry-info-heading {
+  font-family: var(--font-cormorant, "Cormorant Garamond"), serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a0a00;
+  margin-bottom: 1rem;
+}
+.ministry-info-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(26,26,26,0.06);
+}
+.ministry-info-item:last-child { border-bottom: none; }
+.ministry-info-item > i { font-size: 18px; color: #c9980a; margin-top: 2px; flex-shrink: 0; }
+.ministry-info-label {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #767676;
+  margin-bottom: 3px;
+}
+.ministry-info-value {
+  font-size: 13px;
+  color: #1a1a1a;
+  line-height: 1.5;
+}
+.ministry-cta-card {
+  background: #3d0c1a;
+  border-radius: 14px;
+  padding: 1.5rem;
+  text-align: center;
+}
+.ministry-cta-card h3 {
+  font-family: var(--font-cormorant, "Cormorant Garamond"), serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #f5e6c8;
+  margin-bottom: 0.6rem;
+}
+.ministry-cta-card p {
+  font-size: 13px;
+  color: rgba(245,230,200,0.65);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+.ministry-cta-card .btn-gold { width: 100%; justify-content: center; }
+
+/* ── Ministries responsive ── */
+@media (max-width: 1024px) {
+  .ministries-index-section, .ministry-detail { padding: 4rem 2rem; }
+  .ministry-hero { padding: 3.5rem 2rem 3rem; }
+}
+@media (max-width: 768px) {
+  .ministries-index-section, .ministry-detail { padding: 3rem 1.5rem; }
+  .ministry-hero { padding: 3rem 1.5rem 2.5rem; min-height: 380px; }
+  .ministry-detail-inner { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .ministries-index-section, .ministry-detail { padding: 2.5rem 1rem; }
+  .ministry-hero { padding: 2.5rem 1rem 2rem; }
+}
+
+/* ══════════════════════════════════════════════
+   NEWSLETTER
+   ══════════════════════════════════════════════ */
+
+.footer-newsletter-blurb {
+  font-size: 12px;
+  color: rgba(245,230,200,0.5);
+  line-height: 1.6;
+  margin-bottom: 0.85rem;
+}
+.newsletter-form { display: flex; flex-direction: column; gap: 6px; }
+.newsletter-field {
+  display: flex;
+  gap: 0;
+}
+.newsletter-input {
+  flex: 1;
+  padding: 9px 12px;
+  border: 1px solid rgba(245,230,200,0.15);
+  border-right: none;
+  border-radius: 6px 0 0 6px;
+  background: rgba(245,230,200,0.06);
+  color: #f5e6c8;
+  font-family: var(--font-dm-sans, "DM Sans"), sans-serif;
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.newsletter-input::placeholder { color: rgba(245,230,200,0.35); }
+.newsletter-input:focus { border-color: rgba(201,152,10,0.4); }
+.newsletter-input:focus-visible {
+  outline: 2px solid #c9980a;
+  outline-offset: -2px;
+}
+.newsletter-btn {
+  padding: 9px 14px;
+  background: #c9980a;
+  border: 1px solid #c9980a;
+  border-radius: 0 6px 6px 0;
+  color: #1a0a00;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: background 0.2s;
+}
+.newsletter-btn:hover:not(:disabled) { background: #e0ad0c; }
+.newsletter-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+.newsletter-error {
+  font-size: 11px;
+  color: #f5a0a0;
+  line-height: 1.4;
+}
+.newsletter-success {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #a0e0b0;
+  padding: 8px 0;
+}
+.newsletter-success i { font-size: 18px; }
+.footer-watch-links {
+  margin-top: 1.25rem;
+  border-top: 1px solid rgba(245,230,200,0.07);
+  padding-top: 1rem;
+}
