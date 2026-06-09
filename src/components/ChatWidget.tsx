@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import { useEffect, useRef, useState } from 'react';
+import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 
-type Message = { role: 'user' | 'assistant'; content: string };
+type Message = { role: "user" | "assistant"; content: string };
 
 const WELCOME: Message = {
-  role: 'assistant',
+  role: "assistant",
   content:
     "Hello! 👋 I'm the PESDAC assistant. Ask me anything about our church, service times, beliefs, or the Seventh-day Adventist faith — I'm here to help!",
 };
@@ -14,14 +14,14 @@ const WELCOME: Message = {
 export default function ChatWidget() {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([WELCOME]);
-  const [input, setInput] = useState('');
+  const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const bottomRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
 
   useEffect(() => {
     if (open) {
-      bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
+      bottomRef.current?.scrollIntoView({ behavior: "smooth" });
       inputRef.current?.focus();
     }
   }, [open, messages]);
@@ -30,25 +30,25 @@ export default function ChatWidget() {
     const text = input.trim();
     if (!text || loading) return;
 
-    const userMsg: Message = { role: 'user', content: text };
+    const userMsg: Message = { role: "user", content: text };
     const history = [...messages, userMsg];
     setMessages(history);
-    setInput('');
+    setInput("");
     setLoading(true);
 
     // Placeholder for the streaming assistant reply
-    setMessages((prev) => [...prev, { role: 'assistant', content: '' }]);
+    setMessages((prev) => [...prev, { role: "assistant", content: "" }]);
 
     try {
-      const res = await fetch('/api/chat', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+      const res = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           messages: history.map(({ role, content }) => ({ role, content })),
         }),
       });
 
-      if (!res.ok || !res.body) throw new Error('Request failed');
+      if (!res.ok || !res.body) throw new Error("Request failed");
 
       const reader = res.body.getReader();
       const decoder = new TextDecoder();
@@ -64,13 +64,13 @@ export default function ChatWidget() {
             { ...last, content: last.content + chunk },
           ];
         });
-        bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
+        bottomRef.current?.scrollIntoView({ behavior: "smooth" });
       }
     } catch {
       setMessages((prev) => [
         ...prev.slice(0, -1),
         {
-          role: 'assistant',
+          role: "assistant",
           content:
             "I'm sorry, I couldn't reach the server. Please try again or contact the church directly at +233 30 222 3720.",
         },
@@ -81,7 +81,7 @@ export default function ChatWidget() {
   }
 
   function handleKey(e: React.KeyboardEvent<HTMLTextAreaElement>) {
-    if (e.key === 'Enter' && !e.shiftKey) {
+    if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
       send();
     }
@@ -108,7 +108,9 @@ export default function ChatWidget() {
               />
             </div>
             <div className="chat-header-text">
-              <div id="chat-panel-title" className="chat-header-title">PESDAC Assistant</div>
+              <div id="chat-panel-title" className="chat-header-title">
+                PESDAC Assistant
+              </div>
               <div className="chat-header-sub">Ask us anything</div>
             </div>
             <button
@@ -130,11 +132,16 @@ export default function ChatWidget() {
             {messages.map((msg, i) => (
               <div
                 key={i}
-                className={`chat-bubble ${msg.role === 'user' ? 'chat-bubble-user' : 'chat-bubble-bot'}`}
+                className={`chat-bubble ${msg.role === "user" ? "chat-bubble-user" : "chat-bubble-bot"}`}
               >
-                {msg.role === 'assistant' && msg.content === '' && loading && (
-                  <span className="chat-typing" aria-label="Assistant is typing">
-                    <span aria-hidden="true" /><span aria-hidden="true" /><span aria-hidden="true" />
+                {msg.role === "assistant" && msg.content === "" && loading && (
+                  <span
+                    className="chat-typing"
+                    aria-label="Assistant is typing"
+                  >
+                    <span aria-hidden="true" />
+                    <span aria-hidden="true" />
+                    <span aria-hidden="true" />
                   </span>
                 )}
                 {msg.content}
@@ -172,11 +179,14 @@ export default function ChatWidget() {
       <button
         className="chat-toggle-btn"
         onClick={() => setOpen((o) => !o)}
-        aria-label={open ? 'Close assistant' : 'Open church assistant'}
+        aria-label={open ? "Close assistant" : "Open church assistant"}
         aria-expanded={open}
         aria-controls="chat-panel"
       >
-        <i className={`ti ${open ? 'ti-x' : 'ti-message-circle'}`} aria-hidden="true" />
+        <i
+          className={`ti ${open ? "ti-x" : "ti-message-circle"}`}
+          aria-hidden="true"
+        />
         {!open && <span className="chat-toggle-label">Ask us</span>}
       </button>
     </div>
