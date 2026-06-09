@@ -1,6 +1,12 @@
 import Image from "next/image";
 
-const QUICK_LINKS = ["About", "Sermons", "Ministries", "Events", "Contact"] as const;
+const QUICK_LINKS = [
+  { label: "About", href: "/about" },
+  { label: "Sermons", href: "/#sermons" },
+  { label: "Ministries", href: "/#ministries" },
+  { label: "Events", href: "/#events" },
+  { label: "Contact", href: "/contact" },
+] as const;
 
 const SERVICE_TIMES = [
   { label: "Calvary Hour",   val: "8:00 AM — Every Saturday" },
@@ -70,9 +76,9 @@ export default function SiteFooter() {
         <div>
           <h3 className="footer-col-title">Quick Links</h3>
           <ul className="footer-links">
-            {QUICK_LINKS.map((label) => (
+            {QUICK_LINKS.map(({ label, href }) => (
               <li key={label}>
-                <a href={`#${label.toLowerCase()}`}>{label}</a>
+                <a href={href}>{label}</a>
               </li>
             ))}
           </ul>

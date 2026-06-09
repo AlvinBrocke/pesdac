@@ -12,11 +12,11 @@ importers:
         specifier: ^0.102.0
         version: 0.102.0(zod@4.4.3)
       '@remotion/player':
-        specifier: ^4.0.473
-        version: 4.0.473(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+        specifier: ^4.0.474
+        version: 4.0.474(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@tailwindcss/typography':
-        specifier: ^0.5.19
-        version: 0.5.19(tailwindcss@4.3.0)
+        specifier: ^0.5.20
+        version: 0.5.20(tailwindcss@4.3.0)
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -33,35 +33,35 @@ importers:
         specifier: 19.2.4
         version: 19.2.4(react@19.2.4)
       remotion:
-        specifier: ^4.0.473
-        version: 4.0.473(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+        specifier: ^4.0.474
+        version: 4.0.474(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       tailwind-merge:
         specifier: ^3.6.0
         version: 3.6.0
     devDependencies:
       '@tailwindcss/postcss':
-        specifier: ^4
+        specifier: ^4.3.0
         version: 4.3.0
       '@types/node':
-        specifier: ^20
+        specifier: ^20.19.42
         version: 20.19.42
       '@types/react':
-        specifier: ^19
+        specifier: ^19.2.17
         version: 19.2.17
       '@types/react-dom':
-        specifier: ^19
+        specifier: ^19.2.3
         version: 19.2.3(@types/react@19.2.17)
       eslint:
-        specifier: ^9
+        specifier: ^9.39.4
         version: 9.39.4(jiti@2.7.0)
       eslint-config-next:
         specifier: 16.2.7
         version: 16.2.7(@typescript-eslint/parser@8.60.1(eslint@9.39.4(jiti@2.7.0))(typescript@5.9.3))(eslint@9.39.4(jiti@2.7.0))(typescript@5.9.3)
       tailwindcss:
-        specifier: ^4
+        specifier: ^4.3.0
         version: 4.3.0
       typescript:
-        specifier: ^5
+        specifier: ^5.9.3
         version: 5.9.3
 
 packages:
@@ -155,6 +155,9 @@ packages:
 
   '@emnapi/runtime@1.10.0':
     resolution: {integrity: sha512-ewvYlk86xUoGI0zQRNq/mC+16R1QeDlKQy21Ki3oSYXNgLb45GV1P6A0M+/s6nyCuNDqe5VpaY84BzXGwVbwFA==}
+
+  '@emnapi/runtime@1.11.0':
+    resolution: {integrity: sha512-55coeOFKHv1ywEcUXJtWU5f+Jr/W5tZDvZig8DLKSwUN1JpROQ4rk/SNOQiFWmaR/VKF4zuFyW1B8JduOSv6Pg==}
 
   '@emnapi/wasi-threads@1.2.1':
     resolution: {integrity: sha512-uTII7OYF+/Mes/MrcIOYp5yOtSMLBWSIoLPpcgwipoiKbli6k322tcoFsxoIIxPDqW01SQGAgko4EzZi2BNv2w==}
@@ -466,8 +469,8 @@ packages:
     resolution: {integrity: sha512-nn5ozdjYQpUCZlWGuxcJY/KpxkWQs4DcbMCmKojjyrYDEAGy4Ce19NN4v5MduafTwJlbKc99UA8YhSVqq9yPZA==}
     engines: {node: '>=12.4.0'}
 
-  '@remotion/player@4.0.473':
-    resolution: {integrity: sha512-giJ8cIQEdVxftpcX4m+9jWYCbIvpcdKRGVUc3ownxYEsJ30WUSP2+TuQ6aqqLXFAfwhY/SdBVLfopylh3BgMXA==}
+  '@remotion/player@4.0.474':
+    resolution: {integrity: sha512-BjV6anyFGXVazRVn8O61OoeUbuyRJzoS2A6EPa0EUpSJUyjFkIio6hNzaPDPn/W2+d9+EpLX8hdjSsmOzxfnbg==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -573,10 +576,10 @@ packages:
   '@tailwindcss/postcss@4.3.0':
     resolution: {integrity: sha512-Jm05Tjx+9yCLGv5qw1c+84Psds8MnyrEQYCB+FFk2lgGiUjlRqdxke4mVTuYrj2xnVZqKim2Apr5ySuQRYAw/w==}
 
-  '@tailwindcss/typography@0.5.19':
-    resolution: {integrity: sha512-w31dd8HOx3k9vPtcQh5QHP9GwKcgbMp87j58qi6xgiBnFFtKEAgCWnDw4qUT8aHwkCp8bKvb/KGKWWHedP0AAg==}
+  '@tailwindcss/typography@0.5.20':
+    resolution: {integrity: sha512-hwbzQuNUfcPvbegQFatVPl/MY/tcM9KLl963hQ5laJKPh81TEZ1+dNG9PirGvcaDBkp+BCshExAyKVPW91dozw==}
     peerDependencies:
-      tailwindcss: '>=3.0.0 || insiders || >=4.0.0-alpha.20 || >=4.0.0-beta.1'
+      tailwindcss: '>=3.0.0 || >=4.0.0 || insiders'
 
   '@tybys/wasm-util@0.10.2':
     resolution: {integrity: sha512-RoBvJ2X0wuKlWFIjrwffGw1IqZHKQqzIchKaadZZfnNpsAYp2mM0h36JtPCjNDAHGgYez/15uMBpfGwchhiMgg==}
@@ -1781,8 +1784,8 @@ packages:
     resolution: {integrity: sha512-dYqgNSZbDwkaJ2ceRd9ojCGjBq+mOm9LmtXnAnEGyHhN/5R7iDW2TRw3h+o/jCFxus3P2LfWIIiwowAjANm7IA==}
     engines: {node: '>= 0.4'}
 
-  remotion@4.0.473:
-    resolution: {integrity: sha512-Li2u4cVxlbxWgxQPn5oBpUlmNKYFpLUmpE9OHMP7QurvOMfvVK1tcC7utxVEwYFZf18tXwqIPBwmuFvdzMu+YA==}
+  remotion@4.0.474:
+    resolution: {integrity: sha512-0dlDJLXlhB8fp/22Qz4Kn7YkFzhs04ymOLolp4TUQeJ+ltuYzt9w+MSuA6HI6NO8Eoc35y6QecXmofEETlMUBg==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -2188,6 +2191,11 @@ snapshots:
       tslib: 2.8.1
     optional: true
 
+  '@emnapi/runtime@1.11.0':
+    dependencies:
+      tslib: 2.8.1
+    optional: true
+
   '@emnapi/wasi-threads@1.2.1':
     dependencies:
       tslib: 2.8.1
@@ -2340,7 +2348,7 @@ snapshots:
 
   '@img/sharp-wasm32@0.34.5':
     dependencies:
-      '@emnapi/runtime': 1.10.0
+      '@emnapi/runtime': 1.11.0
     optional: true
 
   '@img/sharp-win32-arm64@0.34.5':
@@ -2422,11 +2430,11 @@ snapshots:
 
   '@nolyfill/is-core-module@1.0.39': {}
 
-  '@remotion/player@4.0.473(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+  '@remotion/player@4.0.474(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
       react: 19.2.4
       react-dom: 19.2.4(react@19.2.4)
-      remotion: 4.0.473(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      remotion: 4.0.474(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
 
   '@rtsao/scc@1.1.0': {}
 
@@ -2505,7 +2513,7 @@ snapshots:
       postcss: 8.5.15
       tailwindcss: 4.3.0
 
-  '@tailwindcss/typography@0.5.19(tailwindcss@4.3.0)':
+  '@tailwindcss/typography@0.5.20(tailwindcss@4.3.0)':
     dependencies:
       postcss-selector-parser: 6.0.10
       tailwindcss: 4.3.0
@@ -3849,7 +3857,7 @@ snapshots:
       gopd: 1.2.0
       set-function-name: 2.0.2
 
-  remotion@4.0.473(react-dom@19.2.4(react@19.2.4))(react@19.2.4):
+  remotion@4.0.474(react-dom@19.2.4(react@19.2.4))(react@19.2.4):
     dependencies:
       react: 19.2.4
       react-dom: 19.2.4(react@19.2.4)

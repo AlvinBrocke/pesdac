@@ -11,6 +11,7 @@ const NAV_LINKS = [
   { label: "Ministries", href: "/#ministries" },
   { label: "Events", href: "/#events" },
   { label: "Visit", href: "/#visit" },
+  { label: "Contact", href: "/contact" },
 ] as const;
 
 export default function Nav() {
