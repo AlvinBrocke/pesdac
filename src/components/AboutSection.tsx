@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import StatBox from "@/components/ui/StatBox";
 import AnimateIn from "@/components/ui/AnimateIn";
 
@@ -12,7 +13,7 @@ export default function AboutSection() {
   return (
     <section className="about-strip">
       <AnimateIn delay={0.05}>
-        <div className="section-label">Who We Are</div>
+        <p className="section-label">Who We Are</p>
         <h2 className="section-title">
           Faith rooted in
           <br />
@@ -25,9 +26,9 @@ export default function AboutSection() {
           everyone — whether you grew up Adventist or are simply curious about
           faith.
         </p>
-        <button className="btn-outline">
-          Our Story <i className="ti ti-arrow-right" />
-        </button>
+        <Link href="/about" className="btn-outline">
+          Our Story <i className="ti ti-arrow-right" aria-hidden="true" />
+        </Link>
       </AnimateIn>
       <AnimateIn className="stats-grid" stagger>
         {STATS.map((stat) => (

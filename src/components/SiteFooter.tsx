@@ -32,11 +32,11 @@ export default function SiteFooter() {
                 height={40}
               />
             </div>
-            <div className="footer-logo">
+            <p className="footer-logo">
               Prince Emmanuel
               <br />
               SDA Church
-            </div>
+            </p>
           </div>
           <p>
             An English-speaking Seventh-day Adventist congregation in the heart
@@ -49,9 +49,9 @@ export default function SiteFooter() {
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label={label}
+                aria-label={`${label} (opens in new tab)`}
               >
-                <i className={`ti ${icon}`} />
+                <i className={`ti ${icon}`} aria-hidden="true" />
               </a>
             ))}
           </div>
@@ -68,7 +68,7 @@ export default function SiteFooter() {
 
         {/* Quick Links */}
         <div>
-          <div className="footer-col-title">Quick Links</div>
+          <h3 className="footer-col-title">Quick Links</h3>
           <ul className="footer-links">
             {QUICK_LINKS.map((label) => (
               <li key={label}>
@@ -80,7 +80,7 @@ export default function SiteFooter() {
 
         {/* Service Times */}
         <div>
-          <div className="footer-col-title">Service Times</div>
+          <h3 className="footer-col-title">Service Times</h3>
           <div className="footer-times">
             {SERVICE_TIMES.map(({ label, val }) => (
               <div key={label} className="footer-time-item">
@@ -93,7 +93,7 @@ export default function SiteFooter() {
 
         {/* Watch Online */}
         <div>
-          <div className="footer-col-title">Watch Online</div>
+          <h3 className="footer-col-title">Watch Online</h3>
           <ul className="footer-links">
             <li>
               <a

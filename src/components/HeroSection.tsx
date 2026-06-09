@@ -1,6 +1,10 @@
+import Link from 'next/link';
 import ServiceItem from '@/components/ui/ServiceItem';
 import HeroPlayerWrapper from '@/components/HeroPlayerWrapper';
 import ScrollParallax from '@/components/ui/ScrollParallax';
+
+const YOUTUBE_CHANNEL =
+  'https://www.youtube.com/channel/UCiY1R5aOKZDTd1Xnwt5eQng/videos';
 
 const SERVICE_TIMES = [
   { label: 'Calvary Hour',   value: '8:00 AM',         sub: 'Every Saturday' },
@@ -28,12 +32,17 @@ export default function HeroSection() {
           belong.
         </p>
         <div className="hero-actions">
-          <button className="btn-primary">
-            <i className="ti ti-map-pin" /> Plan Your Visit
-          </button>
-          <button className="btn-outline">
-            <i className="ti ti-player-play" /> Watch Latest Sermon
-          </button>
+          <Link href="/about#visit" className="btn-primary">
+            <i className="ti ti-map-pin" aria-hidden="true" /> Plan Your Visit
+          </Link>
+          <a
+            href={YOUTUBE_CHANNEL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-outline"
+          >
+            <i className="ti ti-player-play" aria-hidden="true" /> Watch Latest Sermon
+          </a>
         </div>
         <div className="service-strip">
           {SERVICE_TIMES.map((item) => (

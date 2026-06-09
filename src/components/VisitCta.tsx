@@ -1,7 +1,10 @@
+const MAPS_URL =
+  'https://www.google.com/maps/search/Prince+Emmanuel+SDA+Church+Osu+Accra';
+
 export default function VisitCta() {
   return (
-    <div className="visit-cta">
-      <h2>
+    <section className="visit-cta" id="visit" aria-labelledby="visit-heading">
+      <h2 id="visit-heading">
         Ready to experience
         <br />
         worship for yourself?
@@ -15,8 +18,15 @@ export default function VisitCta() {
           <div className="lbl">Services</div>
           <div className="val">Saturdays from 8:00 AM</div>
         </div>
-        <button className="btn-dark">Get Directions</button>
+        <a
+          href={MAPS_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-dark"
+        >
+          Get Directions
+        </a>
       </div>
-    </div>
+    </section>
   );
 }

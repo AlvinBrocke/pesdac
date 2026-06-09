@@ -1,21 +1,22 @@
-'use client';
+"use client";
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const NAV_LINKS = [
-  { label: "Home",        href: "/" },
-  { label: "About",       href: "/about" },
-  { label: "Sermons",     href: "/#sermons" },
-  { label: "Ministries",  href: "/#ministries" },
-  { label: "Events",      href: "/#events" },
-  { label: "Visit",       href: "/#visit" },
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Sermons", href: "/#sermons" },
+  { label: "Ministries", href: "/#ministries" },
+  { label: "Events", href: "/#events" },
+  { label: "Visit", href: "/#visit" },
 ] as const;
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
   const [scrollPct, setScrollPct] = useState(0);
+  const menuRef = useRef<HTMLDialogElement>(null);
 
   useEffect(() => {
     function update() {
@@ -24,9 +25,27 @@ export default function Nav() {
         document.documentElement.scrollHeight - window.innerHeight;
       setScrollPct(docHeight > 0 ? (scrollTop / docHeight) * 100 : 0);
     }
-    window.addEventListener('scroll', update, { passive: true });
-    return () => window.removeEventListener('scroll', update);
+    window.addEventListener("scroll", update, { passive: true });
+    return () => window.removeEventListener("scroll", update);
   }, []);
+
+  // Close menu on Escape key
+  useEffect(() => {
+    function handleKeyDown(e: KeyboardEvent) {
+      if (e.key === "Escape" && open) {
+        setOpen(false);
+      }
+    }
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [open]);
+
+  // Move focus into menu when it opens
+  useEffect(() => {
+    if (open) {
+      menuRef.current?.querySelector<HTMLAnchorElement>("a")?.focus();
+    }
+  }, [open]);
 
   return (
     <>
@@ -34,7 +53,7 @@ export default function Nav() {
         <Link href="/" className="nav-logo">
           <div className="logo-mark">
             <Image
-              src="/pesdac-logo.png"
+              src="/pesdac fav icon.png"
               alt="PESDAC logo"
               width={36}
               height={36}
@@ -65,19 +84,29 @@ export default function Nav() {
             onClick={() => setOpen((o) => !o)}
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
+            aria-controls="mobile-menu"
           >
-            <i className={`ti ${open ? "ti-x" : "ti-menu-2"}`} />
+            <i className={`ti ${open ? "ti-x" : "ti-menu-2"}`} aria-hidden="true" />
           </button>
         </div>
 
         {/* Scroll progress */}
         <div className="scroll-progress" aria-hidden="true">
-          <div className="scroll-progress-bar" style={{ width: `${scrollPct}%` }} />
+          <div
+            className="scroll-progress-bar"
+            style={{ width: `${scrollPct}%` }}
+          />
         </div>
       </nav>
 
       {open && (
-        <dialog open className="mobile-menu" aria-label="Navigation menu">
+        <dialog
+          ref={menuRef}
+          open
+          id="mobile-menu"
+          className="mobile-menu"
+          aria-label="Navigation menu"
+        >
           <ul className="mobile-menu-links">
             {NAV_LINKS.map(({ label, href }) => (
               <li key={label}>

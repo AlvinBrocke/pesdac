@@ -91,7 +91,12 @@ export default function ChatWidget() {
     <div className="chat-widget">
       {/* Chat panel */}
       {open && (
-        <div className="chat-panel" role="dialog" aria-label="Church assistant">
+        <div
+          className="chat-panel"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="chat-panel-title"
+        >
           {/* Header */}
           <div className="chat-header">
             <div className="chat-header-logo">
@@ -103,7 +108,7 @@ export default function ChatWidget() {
               />
             </div>
             <div className="chat-header-text">
-              <div className="chat-header-title">PESDAC Assistant</div>
+              <div id="chat-panel-title" className="chat-header-title">PESDAC Assistant</div>
               <div className="chat-header-sub">Ask us anything</div>
             </div>
             <button
@@ -111,20 +116,25 @@ export default function ChatWidget() {
               onClick={() => setOpen(false)}
               aria-label="Close chat"
             >
-              <i className="ti ti-x" />
+              <i className="ti ti-x" aria-hidden="true" />
             </button>
           </div>
 
           {/* Messages */}
-          <div className="chat-messages">
+          <div
+            className="chat-messages"
+            role="log"
+            aria-live="polite"
+            aria-label="Conversation"
+          >
             {messages.map((msg, i) => (
               <div
                 key={i}
                 className={`chat-bubble ${msg.role === 'user' ? 'chat-bubble-user' : 'chat-bubble-bot'}`}
               >
                 {msg.role === 'assistant' && msg.content === '' && loading && (
-                  <span className="chat-typing">
-                    <span /><span /><span />
+                  <span className="chat-typing" aria-label="Assistant is typing">
+                    <span aria-hidden="true" /><span aria-hidden="true" /><span aria-hidden="true" />
                   </span>
                 )}
                 {msg.content}
@@ -152,7 +162,7 @@ export default function ChatWidget() {
               disabled={!input.trim() || loading}
               aria-label="Send message"
             >
-              <i className="ti ti-send" />
+              <i className="ti ti-send" aria-hidden="true" />
             </button>
           </div>
         </div>
@@ -164,8 +174,9 @@ export default function ChatWidget() {
         onClick={() => setOpen((o) => !o)}
         aria-label={open ? 'Close assistant' : 'Open church assistant'}
         aria-expanded={open}
+        aria-controls="chat-panel"
       >
-        <i className={`ti ${open ? 'ti-x' : 'ti-message-circle'}`} />
+        <i className={`ti ${open ? 'ti-x' : 'ti-message-circle'}`} aria-hidden="true" />
         {!open && <span className="chat-toggle-label">Ask us</span>}
       </button>
     </div>

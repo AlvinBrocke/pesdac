@@ -43,7 +43,7 @@ const MINISTRIES = [
 
 export default function MinistriesSection() {
   return (
-    <section className="section ministries">
+    <section id="ministries" className="section ministries">
       <SectionHeader label="Get Involved" title="Ministries for every season of life" />
       <AnimateIn className="prog-grid" stagger>
         {MINISTRIES.map((ministry) => (

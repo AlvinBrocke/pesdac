@@ -6,8 +6,8 @@ type Props = {
 export default function SectionHeader({ label, title }: Props) {
   return (
     <>
-      <div className="section-label">{label}</div>
-      <div className="section-title">{title}</div>
+      <p className="section-label">{label}</p>
+      <h2 className="section-title">{title}</h2>
     </>
   );
 }

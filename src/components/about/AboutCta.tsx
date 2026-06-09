@@ -24,23 +24,23 @@ export default function AboutCta() {
 
         <div className="about-cta-details">
           <div className="cta-detail">
-            <i className="ti ti-map-pin" />
+            <i className="ti ti-map-pin" aria-hidden="true" />
             <div>
               <strong>Where</strong>
               <span>23 Osu Avenue, Ringway Estates, Osu, Accra</span>
             </div>
           </div>
-          <div className="cta-divider" />
+          <div className="cta-divider" aria-hidden="true" />
           <div className="cta-detail">
-            <i className="ti ti-clock" />
+            <i className="ti ti-clock" aria-hidden="true" />
             <div>
               <strong>When</strong>
               <span>Sabbath School 9:30 AM · Worship 11:00 AM</span>
             </div>
           </div>
-          <div className="cta-divider" />
+          <div className="cta-divider" aria-hidden="true" />
           <div className="cta-detail">
-            <i className="ti ti-phone" />
+            <i className="ti ti-phone" aria-hidden="true" />
             <div>
               <strong>Questions?</strong>
               <span>
@@ -57,11 +57,11 @@ export default function AboutCta() {
             rel="noopener noreferrer"
             className="btn-gold"
           >
-            <i className="ti ti-map" />
+            <i className="ti ti-map" aria-hidden="true" />
             Get Directions
           </a>
           <Link href="/#sermons" className="btn-outline-light">
-            <i className="ti ti-player-play" />
+            <i className="ti ti-player-play" aria-hidden="true" />
             Watch a Sermon First
           </Link>
         </div>

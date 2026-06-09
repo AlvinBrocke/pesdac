@@ -41,7 +41,7 @@ export default async function SermonsSection() {
   const latest = videos[0];
 
   return (
-    <section className="section" style={{ background: "white" }}>
+    <section id="sermons" className="section" style={{ background: "white" }}>
       <SectionHeader label="This Week's Message" title="Watch. Reflect. Be moved." />
       <AnimateIn className="sermon-grid">
         <a
@@ -49,7 +49,7 @@ export default async function SermonsSection() {
           href={`${YOUTUBE_BASE}${latest.videoId}`}
           target="_blank"
           rel="noopener noreferrer"
-          aria-label={`Watch: ${latest.title}`}
+          aria-label={`Watch: ${latest.title} (opens in new tab)`}
         >
           <Image
             src={latest.thumbnail}
@@ -58,10 +58,10 @@ export default async function SermonsSection() {
             sizes="(max-width: 768px) 100vw, 55vw"
             style={{ objectFit: "cover", zIndex: 0 }}
           />
-          <div className="play-btn">
+          <div className="play-btn" aria-hidden="true">
             <i className="ti ti-player-play" />
           </div>
-          <div className="video-label">
+          <div className="video-label" aria-hidden="true">
             <span>Latest Sermon</span>
             <p>{latest.title}</p>
           </div>
@@ -77,13 +77,16 @@ export default async function SermonsSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ textDecoration: "none" }}
+                aria-label={`Watch "${video.title}" — ${video.date} (opens in new tab)`}
               >
-                <span className="sermon-num">{String(i + 1).padStart(2, "0")}</span>
-                <div className="sermon-info">
+                <span className="sermon-num" aria-hidden="true">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <div className="sermon-info" aria-hidden="true">
                   <h4>{video.title}</h4>
                   <span>{video.date}</span>
                 </div>
-                <i className="ti ti-player-play" />
+                <i className="ti ti-player-play" aria-hidden="true" />
               </a>
             ))}
           </div>
@@ -92,8 +95,9 @@ export default async function SermonsSection() {
             href={YOUTUBE_CHANNEL}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="View all sermons on YouTube (opens in new tab)"
           >
-            All Sermons on YouTube <i className="ti ti-arrow-right" />
+            All Sermons on YouTube <i className="ti ti-arrow-right" aria-hidden="true" />
           </a>
         </div>
       </AnimateIn>

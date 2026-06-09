@@ -36,7 +36,7 @@ export default function MissionVision() {
         <AnimateIn className="mv-cards" stagger>
           {CARDS.map((card) => (
             <div key={card.label} className="mv-card">
-              <div className="mv-card-icon">
+              <div className="mv-card-icon" aria-hidden="true">
                 <i className={`ti ${card.icon}`} />
               </div>
               <div className="mv-card-label">{card.label}</div>
@@ -46,7 +46,7 @@ export default function MissionVision() {
                 <ul className="mv-values-list">
                   {card.values.map((v) => (
                     <li key={v.text}>
-                      <i className={`ti ${v.icon}`} />
+                      <i className={`ti ${v.icon}`} aria-hidden="true" />
                       {v.text}
                     </li>
                   ))}
