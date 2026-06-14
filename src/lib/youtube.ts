@@ -15,7 +15,7 @@ export async function getLatestVideos(count = 4): Promise<YouTubeVideo[]> {
 
   const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${UPLOADS_PLAYLIST_ID}&maxResults=${count}&key=${apiKey}`;
 
-  const res = await fetch(url, { next: { revalidate: 3600 } });
+  const res = await fetch(url, { next: { revalidate: 600 } });
   if (!res.ok) return [];
 
   const data = await res.json();
